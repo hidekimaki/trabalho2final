@@ -1,0 +1,39 @@
+<h1>DATA-BINDING</h1>
+
+<h2>Property binding</h2>
+<input type="text" [value]="nome" />
+<input type="text" bind-value="nome" />
+
+<hr/>
+<h2>Event binding</h2>
+<button #botao (click)="clicou($event.target.value)">Clique aqui</button>
+
+<br><br>
+
+<div>
+    <input type="text"
+        #inputExemplo
+        (keyup)="onKeyUp($event)" 
+        (blur)="onSave($event.target.value)"
+        (keyup.enter)="onSave(inputExemplo.value)"
+        />
+</div>
+<div>Conteúdo Atual: {{ conteudoAtual }}</div>
+<div>Conteúdo Salvo: {{ conteudoSalvo }}</div>
+
+<br/><br/>
+
+<div [class.colorido]="mouseOver" 
+       (mouseover)="mousePassou()"
+       (mouseout)="mousePassou()"
+       [style.font-size]="mouseOver ? '20px' : '10px'">
+    Este texto ficará destacado quando o mouse passar por cima
+</div>
+
+
+<hr/>
+<h2>Two Way Data-Binding</h2>
+
+<input type="text" [value]="nome" (input)="nome = $event.target.value" /> <br/>
+<input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" /> <br/>
+<input type="text" [(ngModel)]="nome" />
