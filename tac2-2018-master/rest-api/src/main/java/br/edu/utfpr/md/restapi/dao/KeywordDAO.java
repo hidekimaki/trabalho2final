@@ -8,6 +8,7 @@ package br.edu.utfpr.md.restapi.dao;
 import br.edu.utfpr.md.restapi.dao.GenericDAO;
 import br.edu.utfpr.md.restapi.model.Document;
 import br.edu.utfpr.md.restapi.model.Keyword;
+import br.edu.utfpr.md.restapi.model.Pessoa;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 
@@ -16,8 +17,15 @@ public class KeywordDAO extends GenericDAO<Integer,Keyword> {
     public KeywordDAO() {
         super();
     }
-       public List<Keyword> findAllbyName(String name) {
-        return entityManager.createQuery(("SELECT e FROM tb_keyword e  WHERE name = " + name )).getResultList();
+       public Keyword findAllbyName(String name) {
+        List<Keyword> listatag;
+        listatag = this.findAll();
+        for(Keyword ky : listatag){
+            if((ky.getName().equals(name))){
+                return ky;
+            }
+	}
+        return null;
     }
    
 }

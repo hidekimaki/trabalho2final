@@ -37,9 +37,9 @@ public class TagResource {
     }
     
     @Autenticado
-    @Get(value = {"", "/"})
+    @Get(value = {"/{name}"})
     public void getbyName(String name) {
-        List<Keyword> list = tagdao.findAllbyName(name);
+        Keyword list = tagdao.findAllbyName(name);
 
         result.use(Results.json())
                 .withoutRoot()
