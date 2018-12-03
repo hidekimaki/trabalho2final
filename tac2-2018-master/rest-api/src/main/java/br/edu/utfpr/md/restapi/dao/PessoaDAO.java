@@ -20,15 +20,14 @@ public class PessoaDAO extends GenericDAO<Integer, Pessoa> {
 
     //gambiarra teste
     public Pessoa finduser(String email, String senha) {
-        List<Pessoa> listapessoas = new List<Pessoa>();
-        Pessoa p;
+        List<Pessoa> listapessoas ;
         listapessoas = entityManager.createQuery(("SELECT e FROM tb_document e")).getResultList();
         for(Pessoa ps : listapessoas){
             if(ps.getEmail()== email && ps.getSenha() == senha){
-                p = ps;
+                return ps;
             }
 	}
-        return p;
+        return null;
     }
 
 }
