@@ -10,6 +10,7 @@ import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.view.Results;
 import br.edu.utfpr.md.restapi.dao.PessoaDAO;
+import br.edu.utfpr.md.restapi.model.Address;
 import br.edu.utfpr.md.restapi.model.Pessoa;
 import br.edu.utfpr.md.restapi.security.Autenticado;
 import java.util.List;
