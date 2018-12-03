@@ -41,6 +41,9 @@ public class Document {
     @Column(nullable = false)
     private int idcategoria;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Keyword[] tags;
+    
     public int getIdpessoa() {
         return idpessoa;
     }
