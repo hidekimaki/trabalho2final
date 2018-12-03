@@ -39,7 +39,7 @@ public class Document {
     
     @OneToMany(cascade = CascadeType.ALL)
     @Column(nullable = false)
-    private int idcategoria;
+    private Category idcategoria;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Keyword[] tags;
