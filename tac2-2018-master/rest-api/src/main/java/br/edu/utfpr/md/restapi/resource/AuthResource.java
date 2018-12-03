@@ -23,7 +23,7 @@ public class AuthResource {
     public void login(String email, String senha) {
         // Verificando se as credenciais são válidas
          
-        if(pessoadao.getuser(email, senha)!=null) {
+        if(pessoadao.finduser(email, senha)!=null) {
             String token = JWTUtil.createToken( 1L );
             
             result.use(Results.status()).header("Content-type", "text/plain");
