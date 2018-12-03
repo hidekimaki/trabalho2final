@@ -6,11 +6,14 @@
 package br.edu.utfpr.md.restapi.model;
 
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -34,6 +37,7 @@ public class Document {
     @Column(nullable = false)
     private int idpessoa;
     
+    @OneToMany(cascade = CascadeType.ALL)
     @Column(nullable = false)
     private int idcategoria;
 
