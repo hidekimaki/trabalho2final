@@ -26,7 +26,6 @@ public class PessoaResource {
     private Result result;
 
     @Post("")
-    @Autenticado
     @Consumes("application/json")
     public void save(Pessoa pessoa) {
         try {
