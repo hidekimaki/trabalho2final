@@ -37,6 +37,14 @@ public class Address {
         return id;
     }
 
+    public Address(String street, String CEP, String City, String State, String Country) {
+        this.street = street;
+        this.CEP = CEP;
+        this.City = City;
+        this.State = State;
+        this.Country = Country;
+    }
+
     public void setId(int id) {
         this.id = id;
     }

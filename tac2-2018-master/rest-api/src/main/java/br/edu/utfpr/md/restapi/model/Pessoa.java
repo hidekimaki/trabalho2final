@@ -2,11 +2,13 @@ package br.edu.utfpr.md.restapi.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,14 +29,18 @@ public class Pessoa implements Serializable {
     private String email;
 
     private String senha;
-
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address endereco;
+    
     public Pessoa() {
     }
 
-    public Pessoa(String nome, Date dataNascimento, String email, String senha) {
+    public Pessoa(String nome, Date dataNascimento, String email, String senha, Address endereco) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.endereco = endereco;
     }
  
     
